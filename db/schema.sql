@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS employee_tracker_db;
+DROP DATABASE IF EXISTS employee_db;
 
-CREATE DATABASE employee_tracker_db;
+CREATE DATABASE employee_db;
 
-USE employee_tracker_db;
+USE employee_db;
 
 CREATE TABLE employee (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,14 +20,37 @@ CREATE TABLE department(
 CREATE TABLE role (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
-    salary DECIMAL,
+    salary DECIMAL NOT NULL,
     department_id INT NOT NULL,
 );
 
-INSERT INTO department(name) VALUES ("EXECUTIVE");
-INSERT INTO department(name) VALUES ("ENGINEERING");
+INSERT INTO department(name) VALUES ("Executive");
+INSERT INTO department(name) VALUES ("Sales");
+INSERT INTO department(name) VALUES ("Engineering");
+INSERT INTO department(name) VALUES ("Finance");
+INSERT INTO department(name) VALUES ("Legal");
 
-INSERT INTO role(title, salary, department_id) VALUES ("CEO",200,000, 1);
-INSERT INTO role(title, salary, department_id) VALUES ("Developer",70,000, 2);
+INSERT INTO role(title, salary, department_id) VALUES ("CEO",200000, 1);
+INSERT INTO role(title, salary, department_id) VALUES ("Assistant to the CEO",25000, 1);
+INSERT INTO role(title, salary, department_id) VALUES ("VP Sales",100000, 2);
+INSERT INTO role(title, salary, department_id) VALUES ("Salesperson",50000, 2);
+INSERT INTO role(title, salary, department_id) VALUES ("VP Engineering",125000, 3);
+INSERT INTO role(title, salary, department_id) VALUES ("Engineer",75000, 3);
+INSERT INTO role(title, salary, department_id) VALUES ("Accountant",50000, 4);
+INSERT INTO role(title, salary, department_id) VALUES ("Head Lawyer",125000, 5);
+INSERT INTO role(title, salary, department_id) VALUES ("Lawyer",100000, 5);
 
-INSERT INTO employee(first_name,last_name,role_id,manager_id) VALUES ("Ben", "Resnicoff", 1, NULL)
+INSERT INTO employee(first_name,last_name,role_id,manager_id) VALUES
+("Ben", "Resnicoff", 1, NULL),
+("Tommy", "Serrino", 2, NULL),
+("Kinar", "Prasad", 3, NULL),
+("Henry", "Shrier", 4, NULL),
+("Evan", "Palatnik", 5, NULL),
+("Mason", "Alexander", 6, NULL),
+("Henry", "Thinnes", 7, NULL),
+("Alex", "Kiener", 8, NULL),
+("Bobby", "Sieja", 9, NULL);
+
+SELECT * FROM department;
+SELECT * FROM role;
+SELECT * FROM employee;
