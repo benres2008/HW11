@@ -17,7 +17,7 @@ CREATE TABLE department(
     name VARCHAR(30) NOT NULL,
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
@@ -52,5 +52,5 @@ INSERT INTO employee(first_name,last_name,role_id,manager_id) VALUES
 ("Bobby", "Sieja", 9, NULL);
 
 SELECT * FROM department;
-SELECT * FROM role;
+SELECT * FROM roles;
 SELECT * FROM employee;
