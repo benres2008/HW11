@@ -16,7 +16,7 @@ connection.connect(function(err){
 })
 
 function startApp() {
-    inquirer
+    inquirenode
     .prompt({
         name: "action",
         type: "list",
