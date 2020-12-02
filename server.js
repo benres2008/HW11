@@ -16,7 +16,7 @@ connection.connect(function(err){
 })
 
 function startApp() {
-    inquirenode
+    inquirer
     .prompt({
         name: "action",
         type: "list",
@@ -79,7 +79,7 @@ function viewDepartments() {
 }
 
 function viewRoles() {
-    var query = "SELECT * FROM role";
+    var query = "SELECT * FROM roles";
     connection.query(query, function(err, res){
     if (err) throw err;
     console.table('All roles:', res);
@@ -88,7 +88,7 @@ function viewRoles() {
 }
 
 function addEmployee() {
-    connection.query("SELECT * FROM role", function (err, res) {
+    connection.query("SELECT * FROM roles", function (err, res) {
     if (err) throw err;
     
     inquirer
